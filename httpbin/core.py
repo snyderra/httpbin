@@ -313,7 +313,7 @@ def view_origin():
     return jsonify(origin=request.headers.get("X-Forwarded-For", request.remote_addr))
 
 
-@app.route("/uuid")
+@app.route("/uuid",methods=["GET", "POST"])
 def view_uuid():
     """Return a UUID4.
     ---
